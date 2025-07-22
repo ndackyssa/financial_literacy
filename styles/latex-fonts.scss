@@ -1,0 +1,48 @@
+/* 1.  Bring in Latin Modern & CMU fonts  */
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/latin-modern-roman@latest/index.css');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/latin-modern-sans@latest/index.css');
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/latin-modern-typewriter@latest/index.css');
+
+
+
+:root {
+  --bg-beige-light:   #F7F7F2;
+  --bg-beige-mission: #E4E3D3;
+}
+
+
+/* 2.  Apply them site-wide  */
+html, body {
+  font-family: "Latin Modern Roman", "CMU Serif", "Computer Modern Serif", serif;
+  font-size: 17px;          /* optional tweak—matches LaTeX 11-pt */
+  line-height: 1.45;
+  background-color: var(--bg-beige-light);   /* <- swap to …-mission to test */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Latin Modern Roman", "CMU Serif", serif;
+  font-weight: 700;
+  margin-top: 1.6em;
+}
+
+code, pre, kbd {
+  font-family: "Latin Modern Typewriter", "CMU Typewriter Text", "Courier New", monospace;
+}
+
+/* ─── School brand colours ─────────────────────────────── */
+$poly-green:   #154734;   /* Hex for PMS 3435 C  */
+$mustang-gold: #BD8B13;   /* Hex for PMS 1245 C  */
+
+/* Title (= h1 with class .title) */
+h1,h2, h3:nth-child(1), h1.title, .title, .anchored { 
+  color: $poly-green;
+  font-weight: 700;
+}
+
+/* Subtitle element Quarto inserts when you set subtitle: in YAML */
+.subtitle, p.subtitle {
+  color: $mustang-gold;
+  font-weight: 600;
+  margin-top: -.5rem;   /* tucks subtitle a little closer to the title */
+}
+

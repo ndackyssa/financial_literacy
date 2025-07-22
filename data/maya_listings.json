@@ -1,0 +1,52 @@
+[
+  {
+    "id": "83124487",
+    "address": "1600 Barton Springs Rd UNIT 5107, Austin TX 78704",
+    "type": "condo",
+    "beds": 2,
+    "baths": 2,
+    "sqft": 994,
+    "price": 649500,
+    "rent_estimate": 3230,
+    "distance_miles": 0.74,
+    "hoa_monthly": 706,
+    "property_tax_annual": 11615,
+    "category": "Option1",
+    "listing_url": "https://www.zillow.com/homedetails/1600-Barton-Springs-Rd-UNIT-5107-Austin-TX-78704/83124487_zpid/",
+    "image_url": "static/img/house1.webp"
+  },
+  {
+    "id": "110538816",
+    "address": "2509 Lightfoot Trl, Austin TX 78745",
+    "type": "single_family",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1781,
+    "price": 500000,
+    "rent_estimate": 4800,
+    "distance_miles": 4.24,
+    "hoa_monthly": 125,
+    "property_tax_annual": 10809,
+    "category": "Option2",
+    "listing_url": "https://www.zillow.com/homedetails/2509-Lightfoot-Trl-Austin-TX-78745/110538816_zpid/",
+    "image_url": "static/img/house2.webp"
+  },
+{
+  "id": "111Blackwell",
+  "address": "111 Blackwell Ln, Kyle TX 78640",
+  "type": "single_family",
+  "beds": 3,
+  "baths": 2,
+  "sqft": 1590,
+  "price": 350000,
+  "rent_estimate": 0,
+  "distance_miles": 22.0,
+  "hoa_monthly": 46,
+  "property_tax_annual": 0.0205,
+  "commute_cost_monthly": 635,
+  "image_url": "static/img/house4.webp",
+  "listing_url": "https://www.zillow.com/homedetails/111-Blackwell-Ln-Kyle-TX-78640/442284353_zpid/",
+  "category": "Option3"
+}
+
+]

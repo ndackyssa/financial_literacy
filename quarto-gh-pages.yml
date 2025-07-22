@@ -1,0 +1,34 @@
+name: Render & Deploy Quarto Site
+
+on:
+  push:
+    branches: ["main"]      # run every time you push to main
+  workflow_dispatch:        # let you trigger manually from the Actions tab
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # 2. Install Quarto (includes pandoc; tinytex optional for PDF)
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: false     # set to true if you plan to render PDFs
+
+      # 3. Render the entire project (creates _site/)
+      - name: Render Quarto
+        run: quarto render
+
+      # 4. Push the _site/ folder to the gh-pages branch
+      - name: Publish to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _site
+          publish_branch: gh-pages
+          force_orphan: true   # keeps gh-pages history separate

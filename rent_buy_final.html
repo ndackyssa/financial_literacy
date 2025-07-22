@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Rent vs Buy – Help Maya Decide</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="rent_buy_final_files/libs/clipboard/clipboard.min.js"></script>
+<script src="rent_buy_final_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="rent_buy_final_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="rent_buy_final_files/libs/quarto-html/popper.min.js"></script>
+<script src="rent_buy_final_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="rent_buy_final_files/libs/quarto-html/anchor.min.js"></script>
+<link href="rent_buy_final_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="rent_buy_final_files/libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="rent_buy_final_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="rent_buy_final_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="rent_buy_final_files/libs/bootstrap/bootstrap-769b268fb290e116fe386cf5612ac759.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles/latex-fonts.scss">
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Rent vs Buy – Help Maya Decide</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lab-3-buy-vs-rent-30-year-outlook" class="level2">
+<h2 class="anchored" data-anchor-id="lab-3-buy-vs-rent-30-year-outlook">Lab 3 – Buy vs Rent (30-Year Outlook)</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Watch Maya’s 10-second introduction</strong> before you compare the options.</p>
+</div>
+</div>
+<!-- 16:9 responsive wrapper -->
+<div style="position:relative;padding-bottom:56.25%;height:0;">
+  <iframe src="https://www.youtube.com/embed/vzJ31Tz5z-s" title="Maya intro" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+  </iframe>
+</div>
+<!-- Example with a Dropbox raw link 
+```{=html}
+<video controls style="max-width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)">
+  <source src="https://youtu.be/vzJ31Tz5z-s" type="video/mp4">
+  Sorry, your browser can’t play this video.
+</video>
+```
+
+
+```{=html}
+<video src="/static/video/maya_intro.mp4"
+       controls
+       style="max-width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)">
+</video>
+```
+-->
+<p>Maya knows Austin housing is pricey, but she also knows staying on the sidelines for too long can be costly. Your job in <strong>Lab 3</strong> is to convert the spreadsheet you started in Lab 2 into a <strong>decision tool</strong> that shows Maya—with one click—how her net worth will look after <strong>10 years</strong> under four realistic paths:</p>
+<ul>
+<li>Buying the <strong>Barton-Springs condo</strong> a stone’s throw from work<br>
+</li>
+<li>Buying a smaller <strong>starter home on Lightfoot Trail</strong><br>
+</li>
+<li>Buying a lower-priced <strong>starter in Kyle, TX</strong>, 22 miles away<br>
+</li>
+<li><strong>Continuing to rent</strong> a two-bed South Lamar apartment with a roommate</li>
+</ul>
+<p>At the end you will recommend the path that leaves Maya wealthiest <strong>and</strong> explain the trade-offs of big vs small down-payments, PMI vs FHA mortgage insurance, and lifestyle factors like commute and HOA dues.</p>
+<hr>
+<section id="baseline-facts-you-must-load-into-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="baseline-facts-you-must-load-into-the-model">1 Baseline facts you must load into the model</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 23%">
+<col style="width: 21%">
+<col style="width: 18%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Option 1 – Barton-Springs Condo</strong></th>
+<th><strong>Option 2 – Lightfoot Starter</strong></th>
+<th><strong>Option 3 – Kyle Starter</strong></th>
+<th><strong>Rent – South Lamar apt</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Price / Monthly rent</td>
+<td>$649 500</td>
+<td>$500 000</td>
+<td><strong>$350 000</strong></td>
+<td>$2 295 / mo (≈ $1 148 each)</td>
+</tr>
+<tr class="even">
+<td>Beds / Baths / Sq ft</td>
+<td>2 / 2 / 994</td>
+<td>3 / 2 / 1 781</td>
+<td>3 / 2 / 1 590</td>
+<td>2 / 2 / 997</td>
+</tr>
+<tr class="odd">
+<td>HOA dues (mo)</td>
+<td>$485</td>
+<td>$125</td>
+<td><strong>$46</strong></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Distance to office</td>
+<td>0.7 mi</td>
+<td>4.2 mi</td>
+<td><strong>22 mi</strong></td>
+<td>0.9 mi</td>
+</tr>
+<tr class="odd">
+<td><strong>Commute cost (mo)</strong></td>
+<td>$0</td>
+<td>$0</td>
+<td><strong>$635</strong></td>
+<td>$0</td>
+</tr>
+<tr class="even">
+<td>Property-tax rate</td>
+<td>1.8 %</td>
+<td>2.0 %</td>
+<td><strong>2.05 %</strong></td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Maintenance allowance</td>
+<td>1 % of value</td>
+<td>1 %</td>
+<td>1 %</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Home-owner’s insurance (mo)</td>
+<td>$100</td>
+<td>$110</td>
+<td><strong>$105</strong></td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Utilities (mo)</td>
+<td>$180</td>
+<td>$220</td>
+<td>$220</td>
+<td>$180 (split)</td>
+</tr>
+<tr class="even">
+<td>Renter’s insurance (mo)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>$15 each</td>
+</tr>
+<tr class="odd">
+<td>Home appreciation</td>
+<td>2.5 % / yr (all)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sale / purchase costs</td>
+<td>1 % / 3 % (all buys)</td>
+<td></td>
+<td></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Maya starts on a <strong>$65 000 salary</strong>, expects <strong>3 % raises</strong>, pays <strong>12 % federal tax</strong>, and invests any leftover cash at <strong>8 % pre-tax</strong>. Rent is assumed to rise <strong>3 % per year</strong>. Keep these figures editable but locked on your first submission. The standard deduction for single filers for tax year 2025 is <strong>$15,750</strong>. The current SALT cap is <strong>$10,000</strong> but test for the updated one under the “<strong>One big beautiful bill Act</strong>” <strong>$40,000</strong></p>
+<!-- ---------- lightweight Zillow-style CSS ---------- -->
+<style>
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1rem;margin-top:1rem
+}
+.card{
+  border:1px solid #ddd;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);
+  overflow:hidden;background:#fff;font-family:system-ui,sans-serif
+}
+.card-header{position:relative}
+.card-header img{width:100%;height:200px;object-fit:cover}
+.badge{
+  position:absolute;top:8px;left:8px;padding:2px 6px;border-radius:4px;
+  font-size:.75rem;color:#fff;opacity:.9
+}
+.badge.Option1 { background:#0a7d00; }   /* condo */
+.badge.Option2 { background:#006aff; }   /* Lightfoot */
+.badge.Option3 { background:#4d4dff; }   /* Kyle */
+.badge.rentOption { background:#ff8c00; }
+
+
+.card-body{padding:.75rem}
+.price{margin:0;font-size:1.25rem;font-weight:700}
+.meta,.address{margin:.2rem 0;color:#555;font-size:.9rem}
+.btn{
+  display:inline-block;margin-top:.3rem;padding:4px 8px;font-size:.8rem;
+  color:#006aff;border:1px solid currentColor;border-radius:4px;text-decoration:none
+}
+.btn:hover{background:#f0f8ff}
+</style>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These three properties have been pre-selected for Maya (distance to 2222 Barton Springs Rd and price range fit).<br>
+Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>Please note that prices may have changed since the time of recording this assignment.</strong></p>
+</div>
+</div>
+</section>
+</section>
+<section id="buying" class="level2">
+<h2 class="anchored" data-anchor-id="buying">Buying</h2>
+<div class="cards">
+<div class="card">
+<div class="card-header">
+<img src="static/img/house1.webp" alt="" loading="lazy">
+<div class="badge Option1">Option 1</div>
+</div>
+<div class="card-body">
+<p class="price">$649,500</p>
+<p class="meta">2 bd | 2 ba | 994 sq ft</p>
+<p class="meta">HOA $706/mo • 0.74 mi to office</p>
+<p class="address">1600 Barton Springs Rd UNIT 5107, Austin TX 78704</p>
+<a class="btn" href="https://www.zillow.com/homedetails/1600-Barton-Springs-Rd-UNIT-5107-Austin-TX-78704/83124487_zpid/" target="_blank">View Listing ↗</a>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<img src="static/img/house2.webp" alt="" loading="lazy">
+<div class="badge Option2">Option 2</div>
+</div>
+<div class="card-body">
+<p class="price">$500,000</p>
+<p class="meta">3 bd | 2 ba | 1,781 sq ft</p>
+<p class="meta">HOA $125/mo • 4.24 mi to office</p>
+<p class="address">2509 Lightfoot Trl, Austin TX 78745</p>
+<a class="btn" href="https://www.zillow.com/homedetails/2509-Lightfoot-Trl-Austin-TX-78745/110538816_zpid/" target="_blank">View Listing ↗</a>
+</div>
+</div>
+<div class="card">
+<div class="card-header">
+<img src="static/img/house4.webp" alt="" loading="lazy">
+<div class="badge Option3">Option 3</div>
+</div>
+<div class="card-body">
+<p class="price">$350,000</p>
+<p class="meta">3 bd | 2 ba | 1,590 sq ft</p>
+<p class="meta">HOA $46/mo • 22.00 mi to office</p>
+<p class="address">111 Blackwell Ln, Kyle TX 78640</p>
+<a class="btn" href="https://www.zillow.com/homedetails/111-Blackwell-Ln-Kyle-TX-78640/442284353_zpid/" target="_blank">View Listing ↗</a>
+</div>
+</div>
+</div>
+</section>
+<section id="renting" class="level2">
+<h2 class="anchored" data-anchor-id="renting">Renting</h2>
+<div class="cards">
+<div class="card">
+<div class="card-header">
+<img src="static/img/rent.webp" alt="" loading="lazy">
+<div class="badge rentOption">Rent Option</div>
+</div>
+<div class="card-body">
+<p class="price">$2,295 / mo  (1,148 each)</p>
+<p class="meta">2 bd | 2 ba | 997 sq ft</p>
+<p class="meta">0.90 mi to office</p>
+<p class="address">1500 S Lamar Blvd #514, Austin TX 78704</p>
+<a class="btn" href="https://www.zillow.com/homedetails/1500-S-Lamar-Blvd-APT-514-Austin-TX-78704/2096439922_zpid/" target="_blank">View Listing ↗</a>
+</div>
+</div>
+</div>
+<hr>
+<section id="financing-menus-you-must-include" class="level3">
+<h3 class="anchored" data-anchor-id="financing-menus-you-must-include">2 Financing menus you must include</h3>
+<p>To make the tool flexible, create two dropdowns on your Inputs sheet:</p>
+<ol type="1">
+<li><strong>Financing Type</strong> → Conventional | FHA | Rent<br>
+</li>
+<li><strong>Down-payment %</strong> → 20 | 5 | 3.5 <em>(ignored if “Rent” is chosen)</em></li>
+</ol>
+<p>Your formulas must react instantly to these choices. The table below defines the default rates and insurance rules; students may test other down-payments, but the memo must cite the scenarios in <strong>bold</strong>. <!--
+| Path                       | Default DP | Rate | Up-front fee | Monthly insurance logic |
+|----------------------------|-----------:|------|--------------|-------------------------|
+|Conventional **20 %**       | 20 % | 6.50 % | none | none |
+|Conventional **5 % + PMI**  | 5 %  | 6.60 % | none | PMI = 0.65 %/yr of balance until **LTV ≤ 78 %** |
+|FHA **3.5 %**               | 3.5 %| 6.25 % | 1.75 % upfront (financed) | MIP = 0.55 %/yr; lasts 30 yrs when DP \< 10 % |
+|Rent                        | —   | —      | —    | Renter’s insurance $15/mo |
+--></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 16%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>Down-payment selector</th>
+<th>Rate (30-yr fixed)</th>
+<th>Up-front fee</th>
+<th>Monthly insurance rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Conventional – 20 % down</strong> (baseline)</td>
+<td>20 % <strong>(editable)</strong></td>
+<td><strong>6.50 %</strong></td>
+<td>none</td>
+<td><strong>none</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Conventional – Low-down + PMI</strong></td>
+<td>3 % – 10 % <strong>(student chooses)</strong><br><em>use 5 % in the memo unless you test others</em></td>
+<td><strong>6.60 %</strong> <em>(⅛ pt hit for low-down)</em></td>
+<td>none</td>
+<td><strong>PMI = 0.65 % / yr × loan balance</strong><br>• Paid monthly<br>• Auto-cancels at <strong>78 % LTV</strong> (borrower may request at 80 %)</td>
+</tr>
+<tr class="odd">
+<td><strong>FHA – High</strong></td>
+<td>&gt; 10% % <strong>(editable; may test 20 % &amp; 15 %)</strong></td>
+<td><strong>6.15 %</strong></td>
+<td><strong>1.75 %</strong> of loan, financed</td>
+<td><strong>MIP = 0.50 % / yr × loan balance drops after 11 yrs</strong> or when LTV ≤ 78 %</td>
+</tr>
+<tr class="even">
+<td><strong>FHA – Low-down</strong></td>
+<td>3.5 % <strong>(editable; may test 5 % &amp; 10 %)</strong></td>
+<td><strong>6.25 %</strong></td>
+<td><strong>1.75 %</strong> of loan, financed</td>
+<td><strong>MIP = 0.55 % / yr × loan balance</strong><br>• Paid monthly<br>• If original DP &lt; 10 %, lasts <strong>full 10 yrs</strong><br></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"><!--
+---
+
+### 3 What to build (methodical steps)
+
+**a.  Workbook skeleton.**  could include : *Inputs*, *Amort & Cash-flow* (120 monthly rows), *Equity & Investment*, and *Dashboard*.  
+**b.  Core engine.**  Use `PMT()` for  Principal and Interest (P&I).  Add PMI or MIP each month based on the rules above and turn it off automatically when the loan-to-value condition is met.  Feed net cash flow to Maya’s investment column.  
+**c.  10-year summary.**  After 120 cash flows compute sale proceeds, subtract remaining loan, add portfolio balance, and report **net worth**.  
+**d.  Self-check.**  For Option 2 with Conventional 20 % down, your monthly Principal and Interest (P&I) should read ≈ $2528.  
+**e.  Dashboard & memo.**  Show a table and bar chart ranking: Conventional 20 %, Conventional 5 %, FHA 3.5 %, Rent.  In ≤ one page explain which wins, why, and how PMI or MIP shifted the result.
+--></h2>
+<section id="workbook-blueprint-milestones" class="level3">
+<h3 class="anchored" data-anchor-id="workbook-blueprint-milestones">3  Workbook blueprint &amp; milestones</h3>
+<section id="a-sheet-architecture-4-tabs" class="level4">
+<h4 class="anchored" data-anchor-id="a-sheet-architecture-4-tabs">A Sheet architecture (4 tabs)</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 63%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sheet</th>
+<th>Purpose</th>
+<th>Minimum structure &amp; naming</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Inputs</strong> <em>(green cells only)</em></td>
+<td>One-stop control panel</td>
+<td>• <strong>Property selector</strong> → Option 1 / 2 / 3 / Rent (data-validated list)<br>• <strong>Financing Type</strong> → Conventional / FHA / Rent<br>• <strong>Down-payment %</strong> → 20 / 5 / 3.5 <em>(greyed out for Rent)</em><br>• Baseline assumptions table (<strong>blue text</strong>, locked) – price, tax rate, HOA, utilities, inflation, salary, returns, etc.<br>• Named ranges e.g.&nbsp;<code>selProp</code>, <code>finType</code>, <code>dpct</code>, <code>price</code>, <code>hoa</code>, <code>cpi</code>.</td>
+</tr>
+<tr class="even">
+<td><strong>Amort-Cashflow</strong> <em>(120 rows, one per month)</em></td>
+<td>Monthly engine</td>
+<td>Columns:<br><code>Month</code> • <code>BeginBal</code> • <code>Interest</code> • <code>Principal</code> • <code>EndBal</code> • <code>PMI_MIP</code> • <code>Taxes</code> • <code>HOA</code> • <code>Maint</code> • <code>Insur</code> • <code>Utilities</code> • <code>Commute</code> • <strong><code>NetCashFlow</code></strong> (outgo when buying, surplus when renting)</td>
+</tr>
+<tr class="odd">
+<td><strong>Equity-Investment</strong></td>
+<td>Year-end snapshot</td>
+<td>For each year 0-10:<br><code>HomeValue</code> • <code>LoanBal</code> • <code>Equity</code> • <code>Portfolio</code> • <strong><code>NetWorth = Equity + Portfolio</code></strong></td>
+</tr>
+<tr class="even">
+<td><strong>Dashboard</strong></td>
+<td>Presentation layer</td>
+<td>• 4×4 table of 10-yr Net Worth (Conv 20, Conv 5, FHA 3.5, Rent)<br>• Bar/column chart bound to that table<br>• Conditional format: green fill on the max value</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="b-core-engine-formulas-amort-cashflow" class="level4">
+<h4 class="anchored" data-anchor-id="b-core-engine-formulas-amort-cashflow">B Core engine formulas (Amort-Cashflow)</h4>
+<ol type="1">
+<li><strong>P&amp;I</strong> <code>=IF(finType="Rent",0, PMT(rate/12, 360, -LoanAmt))</code><br>
+</li>
+<li><strong>PMI (Conventional)</strong> <code>=IF(AND(finType="Conventional", dpct&lt;0.20, LTV&gt;0.80), LoanBal*0.0065/12, 0)</code><br>
+</li>
+<li><strong>MIP (FHA)</strong> <code>=IF(finType="FHA", LoanBal*mipRate/12, 0)</code> with <code>mipRate</code> chosen from table (0.55 % or 0.50 %).<br>
+</li>
+<li><strong>Taxes / HOA / Utilities / Maint / Commute</strong> link to named rates and apply CPI escalator each anniversary.<br>
+</li>
+<li><strong>NetCashFlow</strong> sum of all outflows; <em>if Rent</em>, flip sign and add to <strong><code>InvestmentContribution</code></strong> on Equity-Investment sheet.</li>
+</ol>
+<hr>
+</section>
+<section id="c-ten-year-roll-up-equity-investment" class="level4">
+<h4 class="anchored" data-anchor-id="c-ten-year-roll-up-equity-investment">C Ten-year roll-up (Equity-Investment)</h4>
+<p><em>Row “10” calculations</em></p>
+<hr>
+</section>
+<section id="additional-modelling-assumptions" class="level4">
+<h4 class="anchored" data-anchor-id="additional-modelling-assumptions">Additional modelling assumptions</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Value / Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Property-tax base</strong></td>
+<td>Use <strong>last year’s assessed value</strong> (no step-up) and apply the current % rate to every future year.</td>
+</tr>
+<tr class="even">
+<td><strong>Home-maintenance allowance</strong></td>
+<td>1 % of the <strong>previous year’s home value</strong> (grows with appreciation).</td>
+</tr>
+<tr class="odd">
+<td><strong>Inflation escalators</strong></td>
+<td>• Utilities grow at the <strong>same rate you set for CPI (3 % base case)</strong>.<br>• HOA dues rise at the <strong>CPI rate</strong> as well.</td>
+</tr>
+<tr class="even">
+<td><strong>Up-front fees</strong> (origination, appraisal, etc.)</td>
+<td><strong>Paid out-of-pocket</strong> at closing; <strong>not</strong> rolled into loan balance.</td>
+</tr>
+<tr class="odd">
+<td><strong>MIP / PMI deductibility</strong></td>
+<td>Deductible for income-tax purposes; model it as an <strong>interest-type</strong> item on Schedule A.</td>
+</tr>
+<tr class="even">
+<td><strong>Standard deduction path</strong></td>
+<td>Start at <strong>$15 750 (2025 single)</strong> and <strong>inflate by CPI</strong> (per “Big Beautiful Bill” proposal).</td>
+</tr>
+<tr class="odd">
+<td><strong>Capital-gains rules on sale</strong></td>
+<td><strong>Capital-gain tax if Maya sells</strong> (assume she does at Year 10):</td>
+</tr>
+</tbody>
+</table>
+<p>• First <strong>$250 000</strong> of gain (single) or <strong>$500 000</strong> (married filing jointly) is excluded <strong>if Maya owned &amp; used the home as her principal residence for ≥ 2 of the 5 years before the sale</strong> (IRC § 121).<br>
+• Any remaining gain is taxed at the long-term capital-gain rate (15 % here).<br>
+• Assume she still meets the 2-of-5 test at the Year-10 sale. |</p>
+<section id="us-tax-assumptions" class="level5">
+<h5 class="anchored" data-anchor-id="us-tax-assumptions">US Tax Assumptions</h5>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Capital-gains exclusion – <strong>Single</strong></td>
+<td><strong>$250 000</strong></td>
+</tr>
+<tr class="even">
+<td>Capital-gains exclusion – <strong>Married / Joint</strong></td>
+<td><strong>$500 000</strong></td>
+</tr>
+<tr class="odd">
+<td>Tax on non-excluded gain</td>
+<td><strong>15 %</strong></td>
+</tr>
+<tr class="even">
+<td>Mortgage-interest deduction limit (principal)</td>
+<td><strong>$750 000</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>Loan costs are not financed.</strong> Treat appraisal, inspection, and other origination fees as an immediate cash outflow at month 0.</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="deliverables-grading" class="level3">
+<h3 class="anchored" data-anchor-id="deliverables-grading">4 Deliverables &amp; grading</h3>
+<p>Upload <strong>one Excel workbook</strong> and <strong>one-page PDF memo</strong> to Canvas by <strong>Tuesday July 29, 11:59 pm</strong>, No Late work .<br>
+Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 pts memo clarity • 15 pts discussion of PMI / MIP vs risk factors. Late work loses 10 % per day.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Pts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Spreadsheet updated with all inputs &amp; working formulas</td>
+<td><strong>30</strong></td>
+</tr>
+<tr class="even">
+<td>Correct 30-year net-worth figures (±$500)</td>
+<td><strong>30</strong></td>
+</tr>
+<tr class="odd">
+<td>Memo: clear recommendation + numeric support</td>
+<td><strong>25</strong></td>
+</tr>
+<tr class="even">
+<td>Discussion of FHA impact &amp; qualitative factors</td>
+<td><strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Build it as if Maya will use it tomorrow—clarity first, shortcuts last.</strong></p>
+<p><em>Good luck!</em></p>
+</section>
+<section id="notes" class="level3">
+<h3 class="anchored" data-anchor-id="notes">Notes</h3>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

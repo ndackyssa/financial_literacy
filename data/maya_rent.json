@@ -1,0 +1,14 @@
+{
+  "id": "1500S_Lamar_514",
+  "address": "1500 S Lamar Blvd #514, Austin TX 78704",
+  "type": "apartment",
+  "beds": 2,
+  "baths": 2,
+  "sqft": 997,
+  "rent_total": 2295,
+  "rent_per_person": 1148,
+  "distance_miles": 0.9,
+  "image_url": "static/img/rent.webp",
+  "listing_url": "https://www.zillow.com/homedetails/1500-S-Lamar-Blvd-APT-514-Austin-TX-78704/2096439922_zpid/",
+  "category": "rentOption"
+}
