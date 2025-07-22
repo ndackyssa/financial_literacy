@@ -297,7 +297,7 @@ Your formulas must react instantly to these choices. The table below defines the
 
 ### 3 Deliverables & grading
 
-Upload **one Excel workbook** and **one-page PDF memo** to Canvas by **Tuesday July 29, 11:59 pm**, No Late work .\
+Upload **one Excel workbook** and **one-page PDF memo** to Canvas by **Saturday July 26, 11:59 pm**, No Late work .\
 Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 pts memo clarity • 15 pts discussion of PMI / MIP vs risk factors. Late work loses 10 % per day.
 
 | Item                                                   | Pts    |
