@@ -100,11 +100,11 @@ Note
 <h3 class="anchored" data-anchor-id="baseline-facts-you-must-load-into-the-model">1 Baseline facts you must load into the model</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 23%">
-<col style="width: 21%">
-<col style="width: 18%">
-<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -331,11 +331,11 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 --></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 25%">
-<col style="width: 23%">
-<col style="width: 16%">
-<col style="width: 27%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -391,78 +391,42 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 **d.  Self-check.**  For Option 2 with Conventional 20 % down, your monthly Principal and Interest (P&I) should read ≈ $2528.  
 **e.  Dashboard & memo.**  Show a table and bar chart ranking: Conventional 20 %, Conventional 5 %, FHA 3.5 %, Rent.  In ≤ one page explain which wins, why, and how PMI or MIP shifted the result.
 --></h2>
-<section id="workbook-blueprint-milestones" class="level3">
-<h3 class="anchored" data-anchor-id="workbook-blueprint-milestones">3  Workbook blueprint &amp; milestones</h3>
-<section id="a-sheet-architecture-4-tabs" class="level4">
-<h4 class="anchored" data-anchor-id="a-sheet-architecture-4-tabs">A Sheet architecture (4 tabs)</h4>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 20%">
-<col style="width: 63%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sheet</th>
-<th>Purpose</th>
-<th>Minimum structure &amp; naming</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Inputs</strong> <em>(green cells only)</em></td>
-<td>One-stop control panel</td>
-<td>• <strong>Property selector</strong> → Option 1 / 2 / 3 / Rent (data-validated list)<br>• <strong>Financing Type</strong> → Conventional / FHA / Rent<br>• <strong>Down-payment %</strong> → 20 / 5 / 3.5 <em>(greyed out for Rent)</em><br>• Baseline assumptions table (<strong>blue text</strong>, locked) – price, tax rate, HOA, utilities, inflation, salary, returns, etc.<br>• Named ranges e.g.&nbsp;<code>selProp</code>, <code>finType</code>, <code>dpct</code>, <code>price</code>, <code>hoa</code>, <code>cpi</code>.</td>
-</tr>
-<tr class="even">
-<td><strong>Amort-Cashflow</strong> <em>(120 rows, one per month)</em></td>
-<td>Monthly engine</td>
-<td>Columns:<br><code>Month</code> • <code>BeginBal</code> • <code>Interest</code> • <code>Principal</code> • <code>EndBal</code> • <code>PMI_MIP</code> • <code>Taxes</code> • <code>HOA</code> • <code>Maint</code> • <code>Insur</code> • <code>Utilities</code> • <code>Commute</code> • <strong><code>NetCashFlow</code></strong> (outgo when buying, surplus when renting)</td>
-</tr>
-<tr class="odd">
-<td><strong>Equity-Investment</strong></td>
-<td>Year-end snapshot</td>
-<td>For each year 0-10:<br><code>HomeValue</code> • <code>LoanBal</code> • <code>Equity</code> • <code>Portfolio</code> • <strong><code>NetWorth = Equity + Portfolio</code></strong></td>
-</tr>
-<tr class="even">
-<td><strong>Dashboard</strong></td>
-<td>Presentation layer</td>
-<td>• report results with graphs</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="b-core-engine-formulas-amort-cashflow" class="level4">
-<h4 class="anchored" data-anchor-id="b-core-engine-formulas-amort-cashflow">B Core engine formulas (Amort-Cashflow)</h4>
-<ol type="1">
-<li><strong>P&amp;I</strong> <code>=IF(finType="Rent",0, PMT(rate/12, 360, -LoanAmt))</code><br>
-</li>
-<li><strong>PMI (Conventional)</strong> <code>=IF(AND(finType="Conventional", dpct&lt;0.20, LTV&gt;0.80), LoanBal*0.0065/12, 0)</code><br>
-</li>
-<li><strong>MIP (FHA)</strong> <code>=IF(finType="FHA", LoanBal*mipRate/12, 0)</code> with <code>mipRate</code> chosen from table (0.55 % or 0.50 %).<br>
-</li>
-<li><strong>Taxes / HOA / Utilities / Maint / Commute</strong> link to named rates and apply CPI escalator each anniversary.<br>
-</li>
-<li><strong>NetCashFlow</strong> sum of all outflows; <em>if Rent</em>, flip sign and add to <strong><code>InvestmentContribution</code></strong> on Equity-Investment sheet.</li>
-</ol>
-</section>
-</section>
-</section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1"><!--
----
+<!-- 
+### 3  Workbook blueprint & milestones
+
+#### A Sheet architecture (4 tabs)
+
+| Sheet                                          | Purpose                | Minimum structure & naming                                                                                                                                                                                                                                                                                                                                                                          |
+|---------------|---------------|------------------------------------------|
+| **Inputs** *(green cells only)*                | One-stop control panel | • **Property selector** → Option 1 / 2 / 3 / Rent (data-validated list)<br>• **Financing Type** → Conventional / FHA / Rent<br>• **Down-payment %** → 20 / 5 / 3.5 *(greyed out for Rent)*<br>• Baseline assumptions table (**blue text**, locked) -- price, tax rate, HOA, utilities, inflation, salary, returns, etc.<br>• Named ranges e.g. `selProp`, `finType`, `dpct`, `price`, `hoa`, `cpi`. |
+| **Amort-Cashflow** *(120 rows, one per month)* | Monthly engine         | Columns:<br>`Month` • `BeginBal` • `Interest` • `Principal` • `EndBal` • `PMI_MIP` • `Taxes` • `HOA` • `Maint` • `Insur` • `Utilities` • `Commute` • **`NetCashFlow`** (outgo when buying, surplus when renting)                                                                                                                                                                                    |
+| **Equity-Investment**                          | Year-end snapshot      | For each year 0-10:<br>`HomeValue` • `LoanBal` • `Equity` • `Portfolio` • **`NetWorth = Equity + Portfolio`**                                                                                                                                                                                                                                                                                       |
+| **Dashboard**                                  | Presentation layer     | • 4×4 table of 10-yr Net Worth (Conv 20, Conv 5, FHA 3.5, Rent)<br>• Bar/column chart bound to that table<br>• Conditional format: green fill on the max value                                                                                                                                                                                                                                      |
+
+------------------------------------------------------------------------
+
+#### B Core engine formulas (Amort-Cashflow)
+
+1.  **P&I** `=IF(finType="Rent",0, PMT(rate/12, 360, -LoanAmt))`\
+2.  **PMI (Conventional)** `=IF(AND(finType="Conventional", dpct<0.20, LTV>0.80), LoanBal*0.0065/12, 0)`\
+3.  **MIP (FHA)** `=IF(finType="FHA", LoanBal*mipRate/12, 0)` with `mipRate` chosen from table (0.55 % or 0.50 %).\
+4.  **Taxes / HOA / Utilities / Maint / Commute** link to named rates and apply CPI escalator each anniversary.\
+5.  **NetCashFlow** sum of all outflows; *if Rent*, flip sign and add to **`InvestmentContribution`** on Equity-Investment sheet.
+
+------------------------------------------------------------------------
 
 #### C Ten-year roll-up (Equity-Investment)
 
-*Row “10” calculations*
---></h2>
+*Row "10" calculations*
+
+------------------------------------------------------------------------
+-->
 <section id="additional-modelling-assumptions" class="level4">
 <h4 class="anchored" data-anchor-id="additional-modelling-assumptions">Additional modelling assumptions</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 70%">
+<col style="width: 31%">
+<col style="width: 68%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -538,9 +502,9 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 </section>
 </section>
 <section id="deliverables-grading" class="level3">
-<h3 class="anchored" data-anchor-id="deliverables-grading">4 Deliverables &amp; grading</h3>
+<h3 class="anchored" data-anchor-id="deliverables-grading">3 Deliverables &amp; grading</h3>
 <p>Upload <strong>one Excel workbook</strong> and <strong>one-page PDF memo</strong> to Canvas by <strong>Tuesday July 29, 11:59 pm</strong>, No Late work .<br>
-Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 pts memo clarity • 15 pts discussion of PMI / MIP vs risk factors.</p>
+Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 pts memo clarity • 15 pts discussion of PMI / MIP vs risk factors. Late work loses 10 % per day.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -554,7 +518,7 @@ Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 p
 <td><strong>30</strong></td>
 </tr>
 <tr class="even">
-<td>Correct 10-year net-worth figures (±$500)</td>
+<td>Correct 30-year net-worth figures (±$500)</td>
 <td><strong>30</strong></td>
 </tr>
 <tr class="odd">
@@ -569,9 +533,34 @@ Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 p
 </table>
 <p><strong>Build it as if Maya will use it tomorrow—clarity first, shortcuts last.</strong></p>
 <p><em>Good luck!</em></p>
-</section>
-<section id="notes" class="level3">
-<h3 class="anchored" data-anchor-id="notes">Notes</h3>
+<!-- 
+### Notes : Example of workbook (no need to follow). This is just to help you get started.
+
+| Sheet                                          | Purpose                | Minimum structure & naming                                                                                                                                                                                                                                                                                                                                                                          |
+|-----------------|-----------------|---------------------------------------|
+| **Inputs** *(green cells only)*                | One-stop control panel | • **Property selector** → Option 1 / 2 / 3 / Rent (data-validated list)<br>• **Financing Type** → Conventional / FHA / Rent<br>• **Down-payment %** → 20 / 5 / 3.5 *(greyed out for Rent)*<br>• Baseline assumptions table (**blue text**, locked) -- price, tax rate, HOA, utilities, inflation, salary, returns, etc.<br>• Named ranges e.g. `selProp`, `finType`, `dpct`, `price`, `hoa`, `cpi`. |
+| **Amort-Cashflow** *(120 rows, one per month)* | Monthly engine         | Columns:<br>`Month` • `BeginBal` • `Interest` • `Principal` • `EndBal` • `PMI_MIP` • `Taxes` • `HOA` • `Maint` • `Insur` • `Utilities` • `Commute` • **`NetCashFlow`** (outgo when buying, surplus when renting)                                                                                                                                                                                    |
+| **Equity-Investment**                          | Year-end snapshot      | For each year 0-10:<br>`HomeValue` • `LoanBal` • `Equity` • `Portfolio` • **`NetWorth = Equity + Portfolio`**                                                                                                                                                                                                                                                                                       |
+| **Dashboard**                                  | Presentation layer     | • 4×4 table of 10-yr Net Worth (Conv 20, Conv 5, FHA 3.5, Rent)<br>• Bar/column chart bound to that table<br>• Conditional format: green fill on the max value                                                                                                                                                                                                                                      |
+
+------------------------------------------------------------------------
+
+#### B Core engine formulas (Amort-Cashflow)
+
+1.  **P&I** `=IF(finType="Rent",0, PMT(rate/12, 360, -LoanAmt))`\
+2.  **PMI (Conventional)** `=IF(AND(finType="Conventional", dpct<0.20, LTV>0.80), LoanBal*0.0065/12, 0)`\
+3.  **MIP (FHA)** `=IF(finType="FHA", LoanBal*mipRate/12, 0)` with `mipRate` chosen from table (0.55 % or 0.50 %).\
+4.  **Taxes / HOA / Utilities / Maint / Commute** link to named rates and apply CPI escalator each anniversary.\
+5.  **NetCashFlow** sum of all outflows; *if Rent*, flip sign and add to **`InvestmentContribution`** on Equity-Investment sheet.
+
+------------------------------------------------------------------------
+
+#### C Ten-year roll-up (Equity-Investment)
+
+*Row "10" calculations*
+
+------------------------------------------------------------------------
+-->
 </section>
 </section>
 
