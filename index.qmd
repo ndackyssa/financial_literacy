@@ -224,7 +224,7 @@ Your formulas must react instantly to these choices. The table below defines the
 | **FHA -- High**                          | \> 10% % **(editable; may test 20 % & 15 %)**                                     | **6.15 %**                           | **1.75 %** of loan, financed | **MIP = 0.50 % / yr × loan balance drops after 11 yrs** or when LTV ≤ 78 %                                              |
 | **FHA -- Low-down**                      | 3.5 % **(editable; may test 5 % & 10 %)**                                         | **6.25 %**                           | **1.75 %** of loan, financed | **MIP = 0.55 % / yr × loan balance**<br>• Paid monthly<br>• If original DP \< 10 %, lasts **full 10 yrs**<br>           |
 
-## <!--
+ <!--
 ---
 
 ### 3 What to build (methodical steps)
@@ -236,7 +236,6 @@ Your formulas must react instantly to these choices. The table below defines the
 **e.  Dashboard & memo.**  Show a table and bar chart ranking: Conventional 20 %, Conventional 5 %, FHA 3.5 %, Rent.  In ≤ one page explain which wins, why, and how PMI or MIP shifted the result.
 -->
 
-```{=html}
 <!-- 
 ### 3  Workbook blueprint & milestones
 
@@ -267,7 +266,8 @@ Your formulas must react instantly to these choices. The table below defines the
 
 ------------------------------------------------------------------------
 -->
-```
+
+
 #### Additional modelling assumptions
 
 | Item                                             | Value / Rule                                                                                                           |
@@ -315,7 +315,8 @@ Your formulas must react instantly to these choices. The table below defines the
 |Spreadsheet inputs adjusted correctly & formulas intact | **10** |
 |Accurate 10-year net-worth results (± $500) | **20** |
 |Memo: clear recommendation with numeric support | **70** |
-|Bonus for identifying spreadsheet issues or edge-case errors | **up to 15** |
+| Bonus for identifying spreadsheet issues, edge-case errors, **or suggesting credible improvements** | **up to 15** |
+
 
 Submit both files to Canvas by **Saturday 26 July, 11:59 pm**
 .  
