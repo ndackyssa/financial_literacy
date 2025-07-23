@@ -295,6 +295,34 @@ Your formulas must react instantly to these choices. The table below defines the
 
 > **Loan costs are not financed.** Treat appraisal, inspection, and other origination fees as an immediate cash outflow at month 0.
 
+
+
+### 3 Deliverables & grading
+
+**What to turn in**
+
+| Item | Details |
+|------|---------|
+|**Updated spreadsheet** | Use the template provided on Canvas — **do not create a new workbook**. Modify the input cells only. Save as **`Lab3_Rent-vs-Buy_yourname.xlsx`**. |
+|**One-page memo (PDF)** | • State **whether Maya should buy or keep renting**.<br>• If buy, name the **best option** (Condo, Lightfoot, or Kyle) and back it with key numbers (monthly cash flow, 10-yr net worth).<br>• Explain the role of down-payment size, PMI / MIP drag, commute cost, and risk factors (HOA hikes, etc.).<br>• **Extra-credit:** call out any formula errors or logic gaps you discover in the template. |
+
+> **Reminder:** I will grade primarily on the quality of your recommendation, but I will double-check your numbers — be sure they reconcile with the Inputs you chose.
+
+**Grading rubric (100 pts total)**  
+
+| Category | Pts |
+|----------|-----|
+|Spreadsheet inputs adjusted correctly & formulas intact | **10** |
+|Accurate 10-year net-worth results (± $500) | **20** |
+|Memo: clear recommendation with numeric support | **70** |
+|Bonus for identifying spreadsheet issues or edge-case errors | **up to 15** |
+
+Submit both files to Canvas by **Saturday 26 July, 11:59 pm**
+.  
+*No late work accepted.*  Good luck!
+
+
+<!-- 
 ### 3 Deliverables & grading
 
 Upload **one Excel workbook** and **one-page PDF memo** to Canvas by **Saturday July 26, 11:59 pm**, No Late work .\
@@ -308,6 +336,8 @@ Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 p
 | Discussion of FHA impact & qualitative factors         | **15** |
 
 **Build it as if Maya will use it tomorrow---clarity first, shortcuts last.**
+--> 
+
 
 *Good luck!*
 
