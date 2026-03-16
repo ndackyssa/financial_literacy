@@ -51,7 +51,7 @@ At the end you will recommend a path **and** explain the trade-offs of affordabi
 ### 1 Baseline facts you must load into the model
 
 |                             | **Option 1 -- Barton-Springs Condo** | **Option 2 -- Lightfoot Starter** | **Option 3 -- Kyle Starter** | **Rent -- South Lamar apt**   |
-|---------------|---------------|---------------|---------------|---------------|
+|-----------------------------|--------------------------------------|-----------------------------------|------------------------------|-------------------------------|
 | Price / Monthly rent        | \$649 500                            | \$500 000                         | **\$350 000**                | \$2 295 / mo (≈ \$1 148 each) |
 | Beds / Baths / Sq ft        | 2 / 2 / 994                          | 3 / 2 / 1 781                     | 3 / 2 / 1 590                | 2 / 2 / 997                   |
 | HOA dues (mo)               | \$485                                | \$125                             | **\$46**                     | ---                           |
@@ -304,7 +304,7 @@ The template already includes a dropdown on the Inputs sheet:
 The formulas react instantly to these choices. The table below shows the default rates and insurance rules built into the spreadsheet. Students may change the down-payment percentage to test other scenarios, but the memo must cite the default values.
 
 | Path                                         | Down-payment default | Rate (30-yr fixed) | Up-front fee                 | Monthly insurance rule                                                                                   |
-|---------------|---------------|---------------|---------------|---------------|
+|----------------------------------------------|----------------------|--------------------|------------------------------|----------------------------------------------------------------------------------------------------------|
 | **Conventional -- High-Down ≥ 25 %**         | 25 %                 | **6.50 %**         | none                         | **none**                                                                                                 |
 | **Conventional -- Low-Down + PMI (\< 20 %)** | 4.5 %                | **6.60 %**         | none                         | **PMI = 0.65 % / yr × loan balance**<br>• Paid monthly<br>• Auto-cancels at **78 % LTV**                 |
 | **FHA -- High-Down \> 10 % + MIP**           | 10 %                 | **6.25 %**         | **1.75 %** of loan, financed | **MIP = 0.55 % / yr × loan balance**<br>• Drops after **11 yrs** or when LTV ≤ 78 %                      |
@@ -317,7 +317,7 @@ The formulas react instantly to these choices. The table below shows the default
 **What to turn in**
 
 | Item                    | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|-------------|-----------------------------------------------------------|
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Updated spreadsheet** | Use the template provided on Canvas --- **do not create a new workbook**. Modify the input cells only. Save as **`Lab3_Rent-vs-Buy_yourname.xlsx`**.                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | **One-page memo (PDF)** | Your memo must address Phases 1 and 2:<br>• **Phase 1:** State whether Maya can afford to buy at her current salary. Show the 28/36 % test results.<br>• **Phase 2:** Report the salary she would need for each option, with and without full retirement contributions. Discuss the retirement trade-off.<br>• Explain the role of down-payment size, PMI / MIP drag, commute cost, and risk factors (HOA hikes, etc.).<br>• **Bonus (Phase 3):** If attempted, name the best buy-vs-rent option at a feasible salary and show how financing type and retirement opportunity cost affect the ranking. |
 
@@ -326,7 +326,7 @@ The formulas react instantly to these choices. The table below shows the default
 **Grading rubric (100 pts + up to 20 bonus)**
 
 | Category                                                                                                                 | Pts          |
-|----------------------------------------------------------|--------------|
+|--------------------------------------------------------------------------------------------------------------------------|--------------|
 | **Phase 1:** Correct affordability analysis with 28/36 % tests                                                           | **20**       |
 | **Phase 2:** Salary goal-seek and retirement trade-off analysis                                                          | **30**       |
 | Spreadsheet inputs adjusted correctly & formulas intact                                                                  | **10**       |
@@ -345,7 +345,7 @@ These assumptions apply to the spreadsheet model. You will need them primarily f
 #### Additional modelling assumptions
 
 | Item                                             | Value / Rule                                                                                                           |
-|-----------------------|------------------------------------------------|
+|--------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | **Property-tax base**                            | Use **last year's assessed value** (no step-up) and apply the current % rate to every future year.                     |
 | **Home-maintenance allowance**                   | 1 % of the **previous year's home value** (grows with appreciation).                                                   |
 | **Inflation escalators**                         | • Utilities grow at the **same rate you set for CPI (3 % base case)**.<br>• HOA dues rise at the **CPI rate** as well. |
