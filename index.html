@@ -63,28 +63,18 @@ Note
 <p><strong>Watch Maya’s 10-second introduction</strong> before you compare the options.</p>
 </div>
 </div>
-<!-- 16:9 responsive wrapper -->
 <div style="position:relative;padding-bottom:56.25%;height:0;">
   <iframe src="https://www.youtube.com/embed/vzJ31Tz5z-s" title="Maya intro" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
   </iframe>
 </div>
-<!-- Example with a Dropbox raw link 
-```{=html}
-<video controls style="max-width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)">
-  <source src="https://youtu.be/vzJ31Tz5z-s" type="video/mp4">
-  Sorry, your browser can’t play this video.
-</video>
-```
-
-
-```{=html}
-<video src="/static/video/maya_intro.mp4"
-       controls
-       style="max-width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)">
-</video>
-```
--->
-<p>Maya knows Austin housing is pricey, but she also knows staying on the sidelines for too long can be costly. Your job in <strong>Lab 3</strong> is to convert the spreadsheet you started in Lab 2 into a <strong>decision tool</strong> that shows Maya—with one click—how her net worth will look after <strong>10 years</strong> under four realistic paths:</p>
+<p>Maya knows Austin housing is pricey, but she also knows staying on the sidelines for too long can be costly. Your job in <strong>Lab 3</strong> is to use the spreadsheet template from Lab 2 as a <strong>decision tool</strong> that answers two core questions:</p>
+<ol type="1">
+<li><strong>Can Maya afford to buy a home today</strong> on her $65 000 salary—while still contributing to retirement and paying down debt?<br>
+</li>
+<li>If not, <strong>what salary (or trade-offs) would she need</strong> to make buying feasible?</li>
+</ol>
+<p><strong>Bonus (+ 20 pts):</strong> At a feasible salary, <strong>which path leaves her wealthiest after 10 years</strong>—buying one of the three properties or continuing to rent? This requires running the Buy vs Rent models and accounting for different financing types and the retirement opportunity cost.</p>
+<p>You will compare four realistic paths:</p>
 <ul>
 <li>Buying the <strong>Barton-Springs condo</strong> a stone’s throw from work<br>
 </li>
@@ -94,10 +84,10 @@ Note
 </li>
 <li><strong>Continuing to rent</strong> a two-bed South Lamar apartment with a roommate</li>
 </ul>
-<p>At the end you will recommend the path that leaves Maya wealthiest <strong>and</strong> explain the trade-offs of big vs small down-payments, PMI vs FHA mortgage insurance, and lifestyle factors like commute and HOA dues.</p>
+<p>At the end you will recommend a path <strong>and</strong> explain the trade-offs of affordability, down-payment size, PMI vs FHA mortgage insurance, retirement contributions, and lifestyle factors like commute and HOA dues.</p>
 <hr>
 <section id="baseline-facts-you-must-load-into-the-model" class="level3">
-<h3 class="anchored" data-anchor-id="baseline-facts-you-must-load-into-the-model">1 Baseline facts you must load into the model</h3>
+<h3 class="anchored" data-anchor-id="baseline-facts-you-must-load-into-the-model">1 Baseline facts you must load into the model</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -203,37 +193,48 @@ Note
 </tbody>
 </table>
 <p>Maya starts on a <strong>$65 000 salary</strong>, expects <strong>3 % raises</strong>, pays <strong>12 % federal tax</strong>, and invests any leftover cash at <strong>8 % pre-tax</strong>. Rent is assumed to rise <strong>3 % per year</strong>. Keep these figures editable but locked on your first submission. The standard deduction for single filers for tax year 2025 is <strong>$15,750</strong>. The current SALT cap is <strong>$10,000</strong> but test for the updated one under the “<strong>One big beautiful bill Act</strong>” <strong>$40,000</strong></p>
-<!-- ---------- lightweight Zillow-style CSS ---------- -->
 <style>
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:1rem;margin-top:1rem
-}
+  gap:1rem;margin-top:1rem}
 .card{
   border:1px solid #ddd;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,.06);
-  overflow:hidden;background:#fff;font-family:system-ui,sans-serif
-}
+  overflow:hidden;background:#fff;font-family:system-ui,sans-serif}
 .card-header{position:relative}
 .card-header img{width:100%;height:200px;object-fit:cover}
 .badge{
   position:absolute;top:8px;left:8px;padding:2px 6px;border-radius:4px;
-  font-size:.75rem;color:#fff;opacity:.9
-}
-.badge.Option1 { background:#0a7d00; }   /* condo */
-.badge.Option2 { background:#006aff; }   /* Lightfoot */
-.badge.Option3 { background:#4d4dff; }   /* Kyle */
+  font-size:.75rem;color:#fff;opacity:.9}
+.badge.Option1 { background:#0a7d00; }
+.badge.Option2 { background:#006aff; }
+.badge.Option3 { background:#4d4dff; }
 .badge.rentOption { background:#ff8c00; }
-
-
 .card-body{padding:.75rem}
 .price{margin:0;font-size:1.25rem;font-weight:700}
 .meta,.address{margin:.2rem 0;color:#555;font-size:.9rem}
 .btn{
   display:inline-block;margin-top:.3rem;padding:4px 8px;font-size:.8rem;
-  color:#006aff;border:1px solid currentColor;border-radius:4px;text-decoration:none
-}
+  color:#006aff;border:1px solid currentColor;border-radius:4px;text-decoration:none}
 .btn:hover{background:#f0f8ff}
+
+/* Phase callout boxes */
+.phase-box {
+  border-left: 4px solid;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.phase-box.affordability { border-color: #c0392b; background: rgba(192,57,43,0.06); }
+.phase-box.goalsalary   { border-color: #2980b9; background: rgba(41,128,185,0.06); }
+.phase-box.comparison    { border-color: #27ae60; background: rgba(39,174,96,0.06); }
+.phase-label {
+  font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 0.25rem;
+}
+.phase-box.affordability .phase-label { color: #c0392b; }
+.phase-box.goalsalary   .phase-label { color: #2980b9; }
+.phase-box.comparison    .phase-label { color: #27ae60; }
 </style>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -313,22 +314,109 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 </div>
 </div>
 <hr>
-<section id="financing-menus-you-must-include" class="level3">
-<h3 class="anchored" data-anchor-id="financing-menus-you-must-include">2 Financing menus you must include</h3>
-<p>To make the tool flexible, create two dropdowns on your Inputs sheet:</p>
+<section id="the-three-questions-you-must-answer-in-order" class="level3">
+<h3 class="anchored" data-anchor-id="the-three-questions-you-must-answer-in-order">2 The three questions you must answer (in order)</h3>
+<div class="phase-box affordability">
+  <div class="phase-label">Phase 1 — Affordability gate</div>
+  <strong>Can Maya afford to buy any of these homes today?</strong>
+  <p style="margin:0.5rem 0 0">
+    <strong>Where to work:</strong> Start on the <code>input</code> tab — confirm Maya's salary, retirement contribution rate 
+    (cell D75), debt balances, and living expenses are loaded correctly. Then go to the 
+    <code>5 year Budgeting (rent or buy)</code> tab. This sheet builds a month-by-month cash-flow projection 
+    that accounts for salary, retirement contributions, taxes, debt payments, and all living expenses.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    From the budgeting tab, identify Maya's <strong>monthly savings</strong> (row 55) — this is the cash left over after 
+    everything except housing. That number is what she has available to put toward housing costs each month.
+    Now compute the <strong>total monthly cost</strong> of each buy option (mortgage P&amp;I + property tax + maintenance + 
+    homeowner's insurance + HOA + utilities + commute + PMI/MIP if applicable) and the rent option (her share of rent + utilities + renter's insurance).
+  </p>
+  <p style="margin:0.5rem 0 0">
+    Apply the standard lending guidelines to each scenario:
+  </p>
+  <ul style="margin:0.25rem 0">
+    <li><strong>28 % rule</strong> — housing expense should not exceed 28 % of gross monthly income</li>
+    <li><strong>36 % rule</strong> — housing + all debt payments should not exceed 36 % of gross monthly income</li>
+  </ul>
+  <p style="margin:0.5rem 0 0">
+    <strong>In your memo:</strong> Report the monthly cash available, the monthly cost of each option, and whether 
+    each passes or fails the 28/36 % tests. What does this tell you about Maya's readiness to buy at her current salary?
+  </p>
+</div>
+
+<div class="phase-box goalsalary">
+  <div class="phase-label">Phase 2 — What would make buying feasible?</div>
+  <strong>What salary would Maya need to afford each option?</strong>
+  <p style="margin:0.5rem 0 0">
+    <strong>Where to work:</strong> For each buy option you want to test, first go to the <code>input</code> tab and 
+    enter the property details in the Buying section (home price, HOA, property-tax rate, utilities, insurance, etc.). 
+    Then open the <code>Buying Model</code> tab — look at the <strong>implied monthly housing expense</strong> (row 25 for 
+    pre-tax, row 42 for after-tax benefit). That is the true monthly cost of owning that property under that financing scenario.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    Now bring that monthly housing figure back to the <code>5 year Budgeting (rent or buy)</code> tab. 
+    Replace the rent/mortgage line with the buying cost (ignore any double-accounting for utilities for now). 
+    Check whether Maya's monthly savings (row 55) stays positive — if it goes deeply negative, 
+    she cannot sustain that option.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    Next, adjust the salary cell (D7 on the <code>input</code> tab) upward — use Goal Seek or manually iterate — until 
+    the budget is sustainable under the 28/36 % rules. Test at least two scenarios:
+  </p>
+  <ul style="margin:0.25rem 0">
+    <li>Keeping the <strong>17 % retirement contribution</strong> (cell D75)</li>
+    <li>Reducing retirement to the <strong>employer-match-only level</strong> (e.g., 3–6 %) — change cell D75 and observe 
+        how the budgeting tab's savings line shifts</li>
+  </ul>
+  <p style="margin:0.5rem 0 0">
+    Also use the <code>5 year Budgeting</code> tab to check: how much has Maya <strong>saved toward a down payment</strong> 
+    after 5 years of renting (look at cumulative savings row 57 and the investment balance row 67)? 
+    Is it enough for 20 % down on the cheapest option? For 3.5 % FHA?
+  </p>
+  <p style="margin:0.5rem 0 0">
+    <strong>In your memo:</strong> Present the break-even salary for each option under both retirement scenarios. 
+    Discuss the trade-off: what does Maya give up in long-term retirement wealth if she cuts contributions to afford a home sooner?
+  </p>
+</div>
+
+<div class="phase-box comparison">
+  <div class="phase-label">Bonus — Phase 3: Buy vs. Rent net-worth comparison (+20 pts)</div>
+  <strong>At a feasible salary, which path leaves Maya wealthiest after 10 years?</strong>
+  <p style="margin:0.5rem 0 0">
+    <em>This phase is optional bonus credit. Complete Phases 1 and 2 first.</em>
+  </p>
+  <p style="margin:0.5rem 0 0">
+    <strong>Where to work:</strong> Your <code>input</code> tab should already have the feasible salary and property details 
+    from Phase 2. Now use the <code>Buying Model</code> and <code>Renting Model</code> tabs to read the 10-year net-worth 
+    projections. Repeat for each buy option (change the property inputs each time) and record the results.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    <strong>Financing type matters here.</strong> The choice of Conventional 20 %, Conventional 5 % + PMI, or FHA 3.5 % + MIP 
+    significantly changes the monthly cost, the equity build-up, and therefore the 10-year net-worth outcome. 
+    Test at least two financing scenarios per property and compare.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    <strong>Retirement caveat:</strong> The Buying and Renting models assume retirement contributions stay the same 
+    across both paths. If Maya had to reduce her 401(k) rate to afford buying, run the analysis twice — once with the 
+    buyer's rate and once with the renter's rate — and add the retirement balance gap to the renter's net worth for a fair comparison.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    <strong>In your memo:</strong> Name the best option and support it with numbers. Show how financing type 
+    (Conventional vs FHA, high vs low down payment) affects the outcome. Does the ranking change 
+    when you include the retirement opportunity cost?
+  </p>
+</div>
+<hr>
+</section>
+<section id="financing-menus" class="level3">
+<h3 class="anchored" data-anchor-id="financing-menus">3 Financing menus</h3>
+<p>The template already includes a dropdown on the Inputs sheet:</p>
 <ol type="1">
-<li><strong>Financing Type</strong> → Conventional | FHA | Rent<br>
+<li><strong>Financing Type</strong> → Conventional High-Down | Conventional Low-Down + PMI | FHA High-Down + MIP | FHA Low-Down + MIP<br>
 </li>
-<li><strong>Down-payment %</strong> → 20 | 5 | 3.5 <em>(ignored if “Rent” is chosen)</em></li>
+<li><strong>Down-payment %</strong> → automatically looked up from the table below based on your financing choice</li>
 </ol>
-<p>Your formulas must react instantly to these choices. The table below defines the default rates and insurance rules; students may test other down-payments, but the memo must cite the scenarios in <strong>bold</strong>. <!--
-| Path                       | Default DP | Rate | Up-front fee | Monthly insurance logic |
-|----------------------------|-----------:|------|--------------|-------------------------|
-|Conventional **20 %**       | 20 % | 6.50 % | none | none |
-|Conventional **5 % + PMI**  | 5 %  | 6.60 % | none | PMI = 0.65 %/yr of balance until **LTV ≤ 78 %** |
-|FHA **3.5 %**               | 3.5 %| 6.25 % | 1.75 % upfront (financed) | MIP = 0.55 %/yr; lasts 30 yrs when DP \< 10 % |
-|Rent                        | —   | —      | —    | Renter’s insurance $15/mo |
---></p>
+<p>The formulas react instantly to these choices. The table below shows the default rates and insurance rules built into the spreadsheet. Students may change the down-payment percentage to test other scenarios, but the memo must cite the default values.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -340,7 +428,7 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 <thead>
 <tr class="header">
 <th>Path</th>
-<th>Down-payment selector</th>
+<th>Down-payment default</th>
 <th>Rate (30-yr fixed)</th>
 <th>Up-front fee</th>
 <th>Monthly insurance rule</th>
@@ -348,82 +436,113 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Conventional – 20 % down</strong> (baseline)</td>
-<td>20 % <strong>(editable)</strong></td>
+<td><strong>Conventional – High-Down ≥ 25 %</strong></td>
+<td>25 %</td>
 <td><strong>6.50 %</strong></td>
 <td>none</td>
 <td><strong>none</strong></td>
 </tr>
 <tr class="even">
-<td><strong>Conventional – Low-down + PMI</strong></td>
-<td>3 % – 10 % <strong>(student chooses)</strong><br><em>use 5 % in the memo unless you test others</em></td>
-<td><strong>6.60 %</strong> <em>(⅛ pt hit for low-down)</em></td>
+<td><strong>Conventional – Low-Down + PMI (&lt; 20 %)</strong></td>
+<td>4.5 %</td>
+<td><strong>6.60 %</strong></td>
 <td>none</td>
-<td><strong>PMI = 0.65 % / yr × loan balance</strong><br>• Paid monthly<br>• Auto-cancels at <strong>78 % LTV</strong> (borrower may request at 80 %)</td>
+<td><strong>PMI = 0.65 % / yr × loan balance</strong><br>• Paid monthly<br>• Auto-cancels at <strong>78 % LTV</strong></td>
 </tr>
 <tr class="odd">
-<td><strong>FHA – High</strong></td>
-<td>&gt; 10% % <strong>(editable; may test 20 % &amp; 15 %)</strong></td>
-<td><strong>6.15 %</strong></td>
-<td><strong>1.75 %</strong> of loan, financed</td>
-<td><strong>MIP = 0.50 % / yr × loan balance drops after 11 yrs</strong> or when LTV ≤ 78 %</td>
-</tr>
-<tr class="even">
-<td><strong>FHA – Low-down</strong></td>
-<td>3.5 % <strong>(editable; may test 5 % &amp; 10 %)</strong></td>
+<td><strong>FHA – High-Down &gt; 10 % + MIP</strong></td>
+<td>10 %</td>
 <td><strong>6.25 %</strong></td>
 <td><strong>1.75 %</strong> of loan, financed</td>
-<td><strong>MIP = 0.55 % / yr × loan balance</strong><br>• Paid monthly<br>• If original DP &lt; 10 %, lasts <strong>full 10 yrs</strong><br></td>
+<td><strong>MIP = 0.55 % / yr × loan balance</strong><br>• Drops after <strong>11 yrs</strong> or when LTV ≤ 78 %</td>
+</tr>
+<tr class="even">
+<td><strong>FHA – Low-Down &lt; 10 % + MIP</strong></td>
+<td>4 %</td>
+<td><strong>6.25 %</strong></td>
+<td><strong>1.75 %</strong> of loan, financed</td>
+<td><strong>MIP = 0.50 % / yr × loan balance</strong><br>• Paid monthly<br>• Lasts <strong>full 30 yrs</strong> if original DP &lt; 10 %</td>
 </tr>
 </tbody>
 </table>
-<p><!--
----
-
-### 3 What to build (methodical steps)
-
-**a.  Workbook skeleton.**  could include : *Inputs*, *Amort & Cash-flow* (120 monthly rows), *Equity & Investment*, and *Dashboard*.  
-**b.  Core engine.**  Use `PMT()` for  Principal and Interest (P&I).  Add PMI or MIP each month based on the rules above and turn it off automatically when the loan-to-value condition is met.  Feed net cash flow to Maya’s investment column.  
-**c.  10-year summary.**  After 120 cash flows compute sale proceeds, subtract remaining loan, add portfolio balance, and report **net worth**.  
-**d.  Self-check.**  For Option 2 with Conventional 20 % down, your monthly Principal and Interest (P&I) should read ≈ $2528.  
-**e.  Dashboard & memo.**  Show a table and bar chart ranking: Conventional 20 %, Conventional 5 %, FHA 3.5 %, Rent.  In ≤ one page explain which wins, why, and how PMI or MIP shifted the result.
---></p>
-<!-- 
-### 3  Workbook blueprint & milestones
-
-#### A Sheet architecture (4 tabs)
-
-| Sheet                                          | Purpose                | Minimum structure & naming                                                                                                                                                                                                                                                                                                                                                                          |
-|---------------|---------------|------------------------------------------|
-| **Inputs** *(green cells only)*                | One-stop control panel | • **Property selector** → Option 1 / 2 / 3 / Rent (data-validated list)<br>• **Financing Type** → Conventional / FHA / Rent<br>• **Down-payment %** → 20 / 5 / 3.5 *(greyed out for Rent)*<br>• Baseline assumptions table (**blue text**, locked) -- price, tax rate, HOA, utilities, inflation, salary, returns, etc.<br>• Named ranges e.g. `selProp`, `finType`, `dpct`, `price`, `hoa`, `cpi`. |
-| **Amort-Cashflow** *(120 rows, one per month)* | Monthly engine         | Columns:<br>`Month` • `BeginBal` • `Interest` • `Principal` • `EndBal` • `PMI_MIP` • `Taxes` • `HOA` • `Maint` • `Insur` • `Utilities` • `Commute` • **`NetCashFlow`** (outgo when buying, surplus when renting)                                                                                                                                                                                    |
-| **Equity-Investment**                          | Year-end snapshot      | For each year 0-10:<br>`HomeValue` • `LoanBal` • `Equity` • `Portfolio` • **`NetWorth = Equity + Portfolio`**                                                                                                                                                                                                                                                                                       |
-| **Dashboard**                                  | Presentation layer     | • 4×4 table of 10-yr Net Worth (Conv 20, Conv 5, FHA 3.5, Rent)<br>• Bar/column chart bound to that table<br>• Conditional format: green fill on the max value                                                                                                                                                                                                                                      |
-
-------------------------------------------------------------------------
-
-#### B Core engine formulas (Amort-Cashflow)
-
-1.  **P&I** `=IF(finType="Rent",0, PMT(rate/12, 360, -LoanAmt))`\
-2.  **PMI (Conventional)** `=IF(AND(finType="Conventional", dpct<0.20, LTV>0.80), LoanBal*0.0065/12, 0)`\
-3.  **MIP (FHA)** `=IF(finType="FHA", LoanBal*mipRate/12, 0)` with `mipRate` chosen from table (0.55 % or 0.50 %).\
-4.  **Taxes / HOA / Utilities / Maint / Commute** link to named rates and apply CPI escalator each anniversary.\
-5.  **NetCashFlow** sum of all outflows; *if Rent*, flip sign and add to **`InvestmentContribution`** on Equity-Investment sheet.
-
-------------------------------------------------------------------------
-
-#### C Ten-year roll-up (Equity-Investment)
-
-*Row "10" calculations*
-
-------------------------------------------------------------------------
--->
+<hr>
+</section>
+<section id="deliverables-grading" class="level3">
+<h3 class="anchored" data-anchor-id="deliverables-grading">4 Deliverables &amp; grading</h3>
+<p><strong>What to turn in</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Updated spreadsheet</strong></td>
+<td>Use the template provided on Canvas — <strong>do not create a new workbook</strong>. Modify the input cells only. Save as <strong><code>Lab3_Rent-vs-Buy_yourname.xlsx</code></strong>.</td>
+</tr>
+<tr class="even">
+<td><strong>One-page memo (PDF)</strong></td>
+<td>Your memo must address Phases 1 and 2:<br>• <strong>Phase 1:</strong> State whether Maya can afford to buy at her current salary. Show the 28/36 % test results.<br>• <strong>Phase 2:</strong> Report the salary she would need for each option, with and without full retirement contributions. Discuss the retirement trade-off.<br>• Explain the role of down-payment size, PMI / MIP drag, commute cost, and risk factors (HOA hikes, etc.).<br>• <strong>Bonus (Phase 3):</strong> If attempted, name the best buy-vs-rent option at a feasible salary and show how financing type and retirement opportunity cost affect the ranking.</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>Reminder:</strong> I will grade primarily on the quality of your reasoning, but I will double-check your numbers — be sure they reconcile with the Inputs you chose.</p>
+</blockquote>
+<p><strong>Grading rubric (100 pts + up to 20 bonus)</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 80%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Pts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Phase 1:</strong> Correct affordability analysis with 28/36 % tests</td>
+<td><strong>20</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Phase 2:</strong> Salary goal-seek and retirement trade-off analysis</td>
+<td><strong>30</strong></td>
+</tr>
+<tr class="odd">
+<td>Spreadsheet inputs adjusted correctly &amp; formulas intact</td>
+<td><strong>10</strong></td>
+</tr>
+<tr class="even">
+<td>Memo: clear recommendation with numeric support for Phases 1 &amp; 2</td>
+<td><strong>40</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Bonus — Phase 3:</strong> 10-year buy-vs-rent net-worth comparison with financing scenarios and retirement opportunity cost</td>
+<td><strong>up to 20</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Submit both files to Canvas by <strong>Friday 20th March, 11:59 pm</strong>.<br>
+<em>No late work accepted.</em> Good luck!</p>
+<hr>
+</section>
+<section id="appendix-modelling-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-modelling-assumptions">Appendix – Modelling assumptions</h3>
+<p>These assumptions apply to the spreadsheet model. You will need them primarily for Phase 2 and the bonus Phase 3.</p>
 <section id="additional-modelling-assumptions" class="level4">
 <h4 class="anchored" data-anchor-id="additional-modelling-assumptions">Additional modelling assumptions</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -465,8 +584,9 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 <p>• First <strong>$250 000</strong> of gain (single) or <strong>$500 000</strong> (married filing jointly) is excluded <strong>if Maya owned &amp; used the home as her principal residence for ≥ 2 of the 5 years before the sale</strong> (IRC § 121).<br>
 • Any remaining gain is taxed at the long-term capital-gain rate (15 % here).<br>
 • Assume she still meets the 2-of-5 test at the Year-10 sale. |</p>
-<section id="us-tax-assumptions" class="level5">
-<h5 class="anchored" data-anchor-id="us-tax-assumptions">US Tax Assumptions</h5>
+</section>
+<section id="us-tax-assumptions" class="level4">
+<h4 class="anchored" data-anchor-id="us-tax-assumptions">US Tax Assumptions</h4>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -497,113 +617,6 @@ Click <strong>“View Listing”</strong> to open the live Zillow page. <strong>
 <p><strong>Loan costs are not financed.</strong> Treat appraisal, inspection, and other origination fees as an immediate cash outflow at month 0.</p>
 </blockquote>
 </section>
-</section>
-</section>
-<section id="deliverables-grading" class="level3">
-<h3 class="anchored" data-anchor-id="deliverables-grading">3 Deliverables &amp; grading</h3>
-<p><strong>What to turn in</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 60%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Item</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Updated spreadsheet</strong></td>
-<td>Use the template provided on Canvas — <strong>do not create a new workbook</strong>. Modify the input cells only. Save as <strong><code>Lab3_Rent-vs-Buy_yourname.xlsx</code></strong>.</td>
-</tr>
-<tr class="even">
-<td><strong>One-page memo (PDF)</strong></td>
-<td>• State <strong>whether Maya should buy or keep renting</strong>.<br>• If buy, name the <strong>best option</strong> (Condo, Lightfoot, or Kyle) and back it with key numbers (monthly cash flow, 10-yr net worth).<br>• Explain the role of down-payment size, PMI / MIP drag, commute cost, and risk factors (HOA hikes, etc.).<br>• <strong>Extra-credit:</strong> call out any formula errors or logic gaps you discover in the template.</td>
-</tr>
-</tbody>
-</table>
-<blockquote class="blockquote">
-<p><strong>Reminder:</strong> I will grade primarily on the quality of your recommendation, but I will double-check your numbers — be sure they reconcile with the Inputs you chose.</p>
-</blockquote>
-<p><strong>Grading rubric (100 pts total)</strong></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 66%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Category</th>
-<th>Pts</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Spreadsheet inputs adjusted correctly &amp; formulas intact</td>
-<td><strong>10</strong></td>
-</tr>
-<tr class="even">
-<td>Accurate 10-year net-worth results (± $500)</td>
-<td><strong>20</strong></td>
-</tr>
-<tr class="odd">
-<td>Memo: clear recommendation with numeric support</td>
-<td><strong>70</strong></td>
-</tr>
-<tr class="even">
-<td>Bonus for identifying spreadsheet issues, edge-case errors, <strong>or suggesting credible improvements</strong></td>
-<td><strong>up to 15</strong></td>
-</tr>
-</tbody>
-</table>
-<p>Submit both files to Canvas by <strong>Saturday 26 July, 11:59 pm</strong> .<br>
-<em>No late work accepted.</em> Good luck!</p>
-<!-- 
-### 3 Deliverables & grading
-
-Upload **one Excel workbook** and **one-page PDF memo** to Canvas by **Saturday July 26, 11:59 pm**, No Late work .\
-Grading: 30 pts correct model • 30 pts accurate 10-yr net-worth calcs • 25 pts memo clarity • 15 pts discussion of PMI / MIP vs risk factors. Late work loses 10 % per day.
-
-| Item                                                   | Pts    |
-|--------------------------------------------------------|--------|
-| Spreadsheet updated with all inputs & working formulas | **30** |
-| Correct 30-year net-worth figures (±\$500)             | **30** |
-| Memo: clear recommendation + numeric support           | **25** |
-| Discussion of FHA impact & qualitative factors         | **15** |
-
-**Build it as if Maya will use it tomorrow---clarity first, shortcuts last.**
--->
-<p><em>Good luck!</em></p>
-<!-- 
-### Notes : Example of workbook (no need to follow). This is just to help you get started.
-
-| Sheet                                          | Purpose                | Minimum structure & naming                                                                                                                                                                                                                                                                                                                                                                          |
-|-----------------|-----------------|---------------------------------------|
-| **Inputs** *(green cells only)*                | One-stop control panel | • **Property selector** → Option 1 / 2 / 3 / Rent (data-validated list)<br>• **Financing Type** → Conventional / FHA / Rent<br>• **Down-payment %** → 20 / 5 / 3.5 *(greyed out for Rent)*<br>• Baseline assumptions table (**blue text**, locked) -- price, tax rate, HOA, utilities, inflation, salary, returns, etc.<br>• Named ranges e.g. `selProp`, `finType`, `dpct`, `price`, `hoa`, `cpi`. |
-| **Amort-Cashflow** *(120 rows, one per month)* | Monthly engine         | Columns:<br>`Month` • `BeginBal` • `Interest` • `Principal` • `EndBal` • `PMI_MIP` • `Taxes` • `HOA` • `Maint` • `Insur` • `Utilities` • `Commute` • **`NetCashFlow`** (outgo when buying, surplus when renting)                                                                                                                                                                                    |
-| **Equity-Investment**                          | Year-end snapshot      | For each year 0-10:<br>`HomeValue` • `LoanBal` • `Equity` • `Portfolio` • **`NetWorth = Equity + Portfolio`**                                                                                                                                                                                                                                                                                       |
-| **Dashboard**                                  | Presentation layer     | • 4×4 table of 10-yr Net Worth (Conv 20, Conv 5, FHA 3.5, Rent)<br>• Bar/column chart bound to that table<br>• Conditional format: green fill on the max value                                                                                                                                                                                                                                      |
-
-------------------------------------------------------------------------
-
-#### B Core engine formulas (Amort-Cashflow)
-
-1.  **P&I** `=IF(finType="Rent",0, PMT(rate/12, 360, -LoanAmt))`\
-2.  **PMI (Conventional)** `=IF(AND(finType="Conventional", dpct<0.20, LTV>0.80), LoanBal*0.0065/12, 0)`\
-3.  **MIP (FHA)** `=IF(finType="FHA", LoanBal*mipRate/12, 0)` with `mipRate` chosen from table (0.55 % or 0.50 %).\
-4.  **Taxes / HOA / Utilities / Maint / Commute** link to named rates and apply CPI escalator each anniversary.\
-5.  **NetCashFlow** sum of all outflows; *if Rent*, flip sign and add to **`InvestmentContribution`** on Equity-Investment sheet.
-
-------------------------------------------------------------------------
-
-#### C Ten-year roll-up (Equity-Investment)
-
-*Row "10" calculations*
-
-------------------------------------------------------------------------
--->
 </section>
 </section>
 
