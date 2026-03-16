@@ -204,86 +204,101 @@ tagList(div(class = "cards", rent_card(rent))) |> browsable()
   <div class="phase-label">Phase 1 — Affordability gate</div>
   <strong>Can Maya afford to buy any of these homes today?</strong>
   <p style="margin:0.5rem 0 0">
-    <strong>Where to work:</strong> Start on the <code>input</code> tab — confirm Maya's salary, retirement contribution rate 
-    (cell D75), debt balances, and living expenses are loaded correctly. The budget currently has Maya renting 
-    (row 20 on the <code>5 year Budgeting</code> tab pulls her share of rent from <code>input</code> cell D30).
+    <strong>Where to work:</strong> Start on the <code>input</code> tab — confirm Maya's salary ($85 000), 
+    retirement contribution rate at <strong>17 %</strong> (cell D75), debt balances, and living expenses are loaded correctly. 
+    Keep the 17 % retirement contribution fixed throughout Phase 1.
   </p>
   <p style="margin:0.5rem 0 0">
-    <strong>Step 1 — Quantify the rent cost.</strong> On the <code>5 year Budgeting</code> tab, look at Maya's 
-    <strong>Savings</strong> line (row 47) with the current rent loaded. This tells you how much cash she has left 
+    <strong>Step 1 — Quantify the rent cost.</strong> On the <code>5 year Budgeting</code> tab, 
+    set the toggle in <strong>cell E18 to 1</strong> (renting mode — row 20 will pull Maya's share of rent from <code>input</code> cell D30). 
+    Look at Maya's <strong>Savings</strong> line (row 47). This tells you how much cash she has left 
     each month after rent and all other expenses.
   </p>
   <p style="margin:0.5rem 0 0">
-    <strong>Step 2 — Quantify each buy option's cost.</strong> For each property, enter its details on the 
+    <strong>Step 2 — Quantify each buy option's cost.</strong> For each of the three properties, enter its details on the 
     <code>input</code> tab (Buying section: home price, HOA, property-tax rate, utilities, insurance, etc.). 
-    Assume for now that Maya has the down payment. Then open the <code>Buying Model</code> tab and read the 
+    Ignore the down payment for now. Then <strong>use the financing dropdown</strong> (cell K5) to cycle through 
+    all four financing options: Conventional High-Down, Conventional Low-Down + PMI, FHA High-Down + MIP, and FHA Low-Down + MIP. 
+    For each combination, open the <code>Buying Model</code> tab and record the 
     <strong>implied monthly housing expense</strong> (row 25 pre-tax, or row 42 after-tax benefit).
   </p>
   <p style="margin:0.5rem 0 0">
-    <strong>Step 3 — Compare and test affordability.</strong> Compare the monthly buying cost to the monthly rent cost. 
-    Apply the standard lending guidelines:
+    You should end up with <strong>12 monthly costs</strong> (3 properties × 4 financing types) plus the rent cost.
+  </p>
+  <p style="margin:0.5rem 0 0">
+    <strong>Step 3 — Test affordability.</strong> For each of those 12 scenarios and the rent option, 
+    apply the standard lending guidelines:
   </p>
   <ul style="margin:0.25rem 0">
     <li><strong>28 % rule</strong> — housing expense should not exceed 28 % of gross monthly income</li>
     <li><strong>36 % rule</strong> — housing + all debt payments should not exceed 36 % of gross monthly income</li>
   </ul>
   <p style="margin:0.5rem 0 0">
-    <strong>In your memo:</strong> Report the monthly rent cost, the monthly buy cost for each option, 
-    and whether each passes or fails the 28/36 % tests at Maya's current $85 000 salary. 
-    What does this tell you about her readiness to buy?
+    <strong>In your memo:</strong> Present a table of monthly housing costs for all 12 buy scenarios and rent. 
+    Report the 28 % and 36 % ratios for each. Which options (if any) pass? 
+    What does this tell you about Maya's readiness to buy at her current salary?
   </p>
 </div>
 
 <div class="phase-box goalsalary">
   <div class="phase-label">Phase 2A — What salary would make buying feasible?</div>
-  <strong>Find the break-even salary for each buy option.</strong>
+  <strong>Find the salary Maya needs to afford each buy option.</strong>
   <p style="margin:0.5rem 0 0">
     <strong>Where to work:</strong> Your <code>input</code> tab should already have the property details from Phase 1. 
-    Assume for now that Maya has the down payment available. On the <code>Buying Model</code> tab, note the 
-    <strong>implied monthly housing expense</strong> (row 25 or row 42).
+    Assume for now that Maya has the down payment available. Pick the buy option and financing type you want to test.
   </p>
   <p style="margin:0.5rem 0 0">
-    Now go to the <code>5 year Budgeting (rent or buy)</code> tab. Replace the rent/mortgage line (row 20) with the 
-    buying cost from the Buying Model (ignore any double-accounting for utilities for now). 
+    Go to the <code>5 year Budgeting (rent or buy)</code> tab and set the toggle in <strong>cell E18 to 0</strong> 
+    (buying mode — this lets you input the mortgage cost from the Buying Model into row 20; ignore any double-accounting 
+    for utilities for now). 
     Check whether Maya's <strong>Savings</strong> line (row 47) stays positive — if it goes deeply negative, 
     she cannot sustain that option at her current salary.
   </p>
   <p style="margin:0.5rem 0 0">
-    Next, adjust the salary cell (D7 on the <code>input</code> tab) upward — use Goal Seek or manually iterate — until 
-    Maya's Savings line (row 47) is no longer negative. You may relax the 28/36 % guidelines if needed, 
-    but <strong>report the resulting ratios in your memo</strong> so it is clear how stretched Maya's budget would be. 
-    Test at least two scenarios:
+    Adjust the salary cell (D7 on the <code>input</code> tab) upward until the budget works. 
+    Find <strong>two salary levels</strong> (recall: the 28 % rule caps housing expense at 28 % of gross monthly income, 
+    and the 36 % rule caps housing + all debt at 36 %):
+  </p>
+  <ul style="margin:0.25rem 0">
+    <li><strong>Break-even salary</strong> — the salary where Savings (row 47) just reaches zero. 
+        Report the 28/36 % ratios at this salary. They will likely be well above the guidelines — 
+        discuss what risks that poses (no emergency cushion, one unexpected expense puts Maya underwater).</li>
+    <li><strong>Safe salary</strong> — the salary where the 28/36 % ratios are actually respected. 
+        This is the income level a lender would realistically approve.</li>
+  </ul>
+  <p style="margin:0.5rem 0 0">
+    Test both salary levels under at least two retirement scenarios:
   </p>
   <ul style="margin:0.25rem 0">
     <li>Keeping the <strong>17 % retirement contribution</strong> (cell D75)</li>
     <li>Reducing retirement to the <strong>employer-match-only level</strong> (e.g., 3–6 %) — change cell D75 and observe 
-        how the Savings line shifts</li>
+        how the Savings line and the required salary shift</li>
   </ul>
   <p style="margin:0.5rem 0 0">
-    <strong>In your memo:</strong> Present the break-even salary for each option under both retirement scenarios. 
-    Report the 28/36 % ratios at that salary. 
-    Discuss the trade-off: what does Maya give up in long-term retirement wealth if she cuts contributions to afford a home sooner?
+    <strong>In your memo:</strong> Present both the break-even and safe salaries for your chosen options 
+    under both retirement scenarios. Report the 28/36 % ratios at each salary level. 
+    Discuss: what does Maya give up in long-term retirement wealth if she cuts contributions to afford a home sooner?
   </p>
 </div>
 
 <div class="phase-box goalsalary">
   <div class="phase-label">Phase 2B — How long to save the down payment?</div>
-  <strong>At the feasible salary, how many years of renting before Maya can afford the down payment?</strong>
+  <strong>At a salary where the 28/36 % ratios are respected, how long must Maya rent before she can afford the down payment?</strong>
   <p style="margin:0.5rem 0 0">
-    <strong>Where to work:</strong> Go back to the renting scenario — restore rent in row 20 on the 
-    <code>5 year Budgeting</code> tab, and keep the feasible salary from Phase 2A on the <code>input</code> tab. 
-    With that salary and the retirement contribution rate you chose, look at cumulative savings (row 59) 
-    and investment balance (row 66) over time.
+    <strong>Where to work:</strong> Go back to the renting scenario — set <strong>cell E18 to 1</strong> on the 
+    <code>5 year Budgeting</code> tab. Set the salary on the <code>input</code> tab to the 
+    <strong>safe salary</strong> from Phase 2A (the one where 28/36 % is respected). 
+    Keep whichever retirement contribution rate you are testing.
   </p>
   <p style="margin:0.5rem 0 0">
-    Find how many years it takes Maya to accumulate enough for the required down payment. 
-    Check at least two financing paths: 25 % conventional down and 4 % FHA down on your target property. 
-    You may relax the 28/36 % guidelines here as well, but <strong>report the ratios</strong>.
+    Look at cumulative savings (row 49) and investment balance (row 59) over time. 
+    Find how many years it takes Maya to accumulate enough for the required down payment plus closing costs. 
+    Check at least two financing paths: 25 % conventional down and 4 % FHA down on your target property.
   </p>
   <p style="margin:0.5rem 0 0">
     <strong>In your memo:</strong> Report the down-payment timeline for each financing type. 
     Does FHA's lower down payment meaningfully shorten the wait? 
-    What is the trade-off between a faster purchase (FHA, lower DP) and the ongoing MIP cost?
+    What is the trade-off between a faster purchase (FHA, lower DP) and the ongoing MIP cost over 30 years?
   </p>
 </div>
 
@@ -357,7 +372,7 @@ The formulas react instantly to these choices. The table below shows the default
 | Memo: clear recommendation with numeric support for Phases 1 & 2                                                         | **40**       |
 | **Bonus --- Phase 3:** 10-year buy-vs-rent net-worth comparison with financing scenarios and retirement opportunity cost | **up to 20** |
 
-Submit both files to Canvas by **Friday 20th March, 11:59 pm**.\
+Submit both files to Canvas by **Saturday 26 July, 11:59 pm**.\
 *No late work accepted.* Good luck!
 
 ------------------------------------------------------------------------
