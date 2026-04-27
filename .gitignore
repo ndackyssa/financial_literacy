@@ -1,4 +1,52 @@
-.Rproj.user
+# ===== R =====
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
+*_cache/
+*.utf8.md
+*.knit.md
+.Renviron
+*.Rcheck/
+
+# ===== Quarto =====
+/.quarto/
+_freeze/
+_site/
+*.qmd_files/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# ===== Secrets — NEVER commit =====
+.env
+.env.*
+*.pem
+*.key
+secrets/
+credentials/
+api_keys.txt
+*.token
+
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ===== Editors =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== OS / temp =====
+Thumbs.db
+*~
+*.tmp
+*.log
